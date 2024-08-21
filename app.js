@@ -10,7 +10,10 @@ const Product = require('./addproduct');
 
 // Middleware to parse JSON and handle CORS
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://parisudhamcottonindus.netlify.app',
+}));
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
